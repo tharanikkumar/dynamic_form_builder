@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { FormSection } from '../types/formTypes';
 import { FieldRenderer } from './FieldRenderer';
 
-
 interface SectionProps {
   section: FormSection;
   onNext: (data: Record<string, any>) => void;
@@ -23,6 +22,7 @@ const Section: React.FC<SectionProps> = ({ section, onNext, onPrev, onSubmit, is
   const handleSectionSubmit = (data: Record<string, any>) => {
     if (isLast) {
       onSubmit(data);
+      alert("Form submitted successfully! Check console for data.");
     } else {
       onNext(data);
     }
